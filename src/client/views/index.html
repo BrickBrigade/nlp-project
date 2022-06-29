@@ -31,5 +31,14 @@
 		<footer>
 			<p>This is a footer</p>
 		</footer>
+		<script>
+			// Check that Service Worker is supported
+			if('serviceWorker' in navigator) {
+				// Use the window load event to kep the page Load performant
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/service-worker.js')
+				})
+			}
+		</script>
 	</body>
 </html>
